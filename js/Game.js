@@ -22,12 +22,12 @@ class Game extends UI {
             rows: 16,
             cols: 30,
             mines: 99
+        },
+        custom: {
+            rows: 8,
+            cols: 8,
+            mines: 10
         }
-        // custom: {
-        //     rows: null,
-        //     cols: null,
-        //     mines: null
-        // }
     }
 
     #counter = new Counter();
@@ -38,6 +38,10 @@ class Game extends UI {
     #numberOfRows = null;
     #numberOfCols = null;
     #numberOfMines = null;
+
+    // #numberOfCustomRows = null;
+    // #numberOfCustomCols = null;
+    // #numberOfCustomMines = null;
 
     #cells = [];
     #cellsElements = null;
@@ -142,7 +146,7 @@ class Game extends UI {
         this.#buttons.easy.addEventListener('click', () => this.#handleNewGameClick(this.#config.easy.rows, this.#config.easy.cols, this.#config.easy.mines))
         this.#buttons.normal.addEventListener('click', () => this.#handleNewGameClick(this.#config.normal.rows, this.#config.normal.cols, this.#config.normal.mines))
         this.#buttons.expert.addEventListener('click', () => this.#handleNewGameClick(this.#config.expert.rows, this.#config.expert.cols, this.#config.expert.mines))
-        // this.#buttons.custom.addEventListener('click', () => this.#handleNewGameClick(this.#config.custom.rows, this.#config.custom.cols, this.#config.custom.mines))
+        this.#buttons.custom.addEventListener('click', () => this.#handleNewGameClick(this.#config.custom.rows, this.#config.custom.cols, this.#config.custom.mines))
         this.#buttons.reset.element.addEventListener('click', () => this.#handleNewGameClick())
     }
 
